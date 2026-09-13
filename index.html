@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 360px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .warning {
+            margin-top: 20px;
+            padding: 12px;
+            background: #fff3cd;
+            border: 1px solid #ffe69c;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Account Verification</h1>
+
+    <p>This is an authorized security awareness simulation.</p>
+
+    <form onsubmit="showWarning(event)">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Verify Account</button>
+    </form>
+
+    <div id="warning" class="warning" style="display:none;">
+        <strong>Security Awareness:</strong><br>
+        This simulation does not collect or transmit credentials.
+        Always verify the sender, domain, URL, and request before entering
+        sensitive information.
+    </div>
+</div>
+
+<script>
+function showWarning(event) {
+    event.preventDefault();
+    document.getElementById("warning").style.display = "block";
+}
+</script>
+
+</body>
+</html>
